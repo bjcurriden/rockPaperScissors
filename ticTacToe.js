@@ -12,32 +12,35 @@ computerSelection = cpuOptions[Math.floor(Math.random()*cpuOptions.length)];
 console.log(computerSelection);
 
 
-
+function playRound(computerSelection, playerSelection) {
 
 if ((computerSelection == "rock") && (playerSelection.toLowerCase() == "paper")) {
-alert('You win! Paper covers rock!');
+return "You win! Paper covers rock!"
 }
 
 if ((computerSelection == "rock") && (playerSelection.toLowerCase() == "scissors")) {
-alert("You lose! Rock smashes scissors!");
+return("You lose! Rock smashes scissors!");
 }
 
 if ((computerSelection == "paper") && (playerSelection.toLowerCase() == "scissors")) {
-alert("You win! Scissors cut paper!");
+return("You win! Scissors cut paper!");
 }
 
 if ((computerSelection == "paper") && (playerSelection.toLowerCase() == "rock")) {
-alert("You lose! Paper covers rock!");
+return("You lose! Paper covers rock!");
 }
 
 if ((computerSelection == "scissors") && (playerSelection.toLowerCase() == "rock")) {
-alert("You win! Rock smashes scissors!");
+return("You win! Rock smashes scissors!");
 }
 
 if ((computerSelection == "scissors") && (playerSelection.toLowerCase() == "paper")) {
-alert("You lose! Scissors cut paper!");
+return("You lose! Scissors cut paper!");
 }
 
-else {
-    alert("it's a tie");
+if (computerSelection == playerSelection.toLowerCase()) {
+    return("it's a tie");
 }
+}
+
+alert(playRound(computerSelection, playerSelection));
